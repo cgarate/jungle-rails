@@ -1,0 +1,18 @@
+<% if product = Product.find_by(id: li.product_id) %>
+<tr>
+  <td>
+    <%= image_tag product.image.tiny %>
+  </td>
+  <td>
+    <%= product.name %>
+    <br>
+    <p><%= product.description %></p>
+  </td>
+  <td>
+    <%= li.quantity %>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol li.total_price_cents/100 %>
+  </td>
+</tr>
+<% end %>
