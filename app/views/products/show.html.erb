@@ -25,7 +25,12 @@
         </dl>
       </div>
     </div>
-
+    <%= render 'review' %>
+    <h3 class="page-header"> Reviews: </h3>
+    <br/>
+    <% @reviews.each do |r| %>
+     <%= render 'rating', rating: r.rating, description: r.description, user: r.user.name, created_at: r.created_at  %>
+   <% end %>
   </article>
 
 </section>
