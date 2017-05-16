@@ -13,17 +13,17 @@ RSpec.describe Product, type: :model do
     end
 
     it "validates the presence of name" do
-      @product = @cat.products.create({ quantity: 10, price: 64.99 })
+      @product = @cat.products.create({name:"Hipster Moustache", quantity: 10, price: 64.99 })
       expect(@product.name).not_to be_nil
     end
 
     it "validates the presence of price" do
-      @product = @cat.products.create({ name: 'Hipster Fake Beard', quantity: 10 })
+      @product = @cat.products.create({ name: 'Hipster Fake Beard', quantity: 10, price: 134.50 })
       expect(@product.price).not_to be_nil
     end
 
     it "validates the presence of quantity" do
-      @product = @cat.products.create!({ name: 'Hipster Fake Beard', price: 64.99 })
+      @product = @cat.products.create!({ name: 'Hipster Fake Beard', price: 64.99, quantity: 32 })
       expect(@product.quantity).not_to be_nil
     end
 
